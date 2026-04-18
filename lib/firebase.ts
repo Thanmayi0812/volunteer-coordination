@@ -2,12 +2,12 @@ import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: "AIzaSyBsM7Xzrn5KCDZbiGxzhelg6gkClMAzCAk",
+  authDomain: "volunteer-coordination-ce21a.firebaseapp.com",
+  projectId: "volunteer-coordination-ce21a",
+  storageBucket: "volunteer-coordination-ce21a.firebasestorage.app",
+  messagingSenderId: "689797703465",
+  appId: "1:689797703465:web:6860d02ae1b9853a63b938",
 };
 
 // Initialize Firebase (keep as singleton to avoid reinitializing on hot reloads)
