@@ -16,6 +16,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb"
+import { useEffect } from "react"
 
 const viewTitles: Record<string, { title: string; description: string }> = {
   dashboard: { title: "Dashboard", description: "Overview of volunteer operations" },
@@ -27,8 +28,14 @@ const viewTitles: Record<string, { title: string; description: string }> = {
 }
 
 export default function Home() {
-  const { activeView } = useStore()
+  const { activeView, initializeFirebase } = useStore()
   const currentView = viewTitles[activeView] || viewTitles.dashboard
+
+  useEffect(() => {
+    // Start listening to Firebase collections
+    const cleanup = initializeFirebase()
+    return () => cleanup()
+  }, [initializeFirebase])
 
   const renderView = () => {
     switch (activeView) {
